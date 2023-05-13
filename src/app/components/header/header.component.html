@@ -1,0 +1,40 @@
+<header class="center">
+  <div class="container">
+    <div class="header-content center-y">
+      <div class="logo-links-group center-y">
+        <a routerLink="/">
+          <img ngSrc="assets/icons/header/DRAMATIC.png" alt="DRAMATIC" height="36" width="182"/>
+        </a>
+        <a routerLink="/">
+          <div class="active-link-div">
+            <p class="active-link">{{'home' | uppercase}}</p>
+            <div class="center center-y">
+              <div class="blue-circle"></div>
+            </div>
+          </div>
+        </a>
+        <a routerLink="/" *ngFor="let link of links"
+          class="link"
+        >{{link | uppercase}}</a>
+      </div>
+      <div class="search-links-group center-y">
+        <div class="search center center-y">
+          <input class="input-field" placeholder="{{'search' | uppercase}}"/>
+          <img class="cursor-pointer" src="assets/icons/header/search%201.png" alt="search"/>
+        </div>
+        <a routerLink="/">
+          <img src="assets/icons/header/gift%201.png" alt="gift"/>
+        </a>
+        <a routerLink="/">
+          <img src="assets/icons/header/bell%201.png" alt="bell"/>
+        </a>
+        <a routerLink="/">
+          <div class="profile">
+            <img src="assets/icons/header/Ellipse%201.png" alt="profile"/>
+            <img class="profile-dot" src="assets/icons/header/Ellipse%202.png" alt="."/>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
