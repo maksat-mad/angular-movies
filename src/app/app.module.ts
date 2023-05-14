@@ -8,6 +8,7 @@ import {NgOptimizedImage} from "@angular/common";
 import { HomeComponent } from './pages/home/home.component';
 import { MovieComponent } from './pages/movie/movie.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     HeaderComponent,
     HomeComponent,
     MovieComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FooterComponent
   ],
     imports: [
         BrowserModule,
