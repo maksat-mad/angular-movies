@@ -13,6 +13,7 @@ import { MovieCoverComponent } from './components/movie-cover/movie-cover.compon
 import { BigButtonComponent } from './components/UI/buttons/big-button/big-button.component';
 import { MediumButtonComponent } from './components/UI/buttons/medium-button/medium-button.component';
 import { SmallButtonComponent } from './components/UI/buttons/small-button/small-button.component';
+import { MovieCardComponent } from './components/UI/cards/movie-card/movie-card.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SmallButtonComponent } from './components/UI/buttons/small-button/small
     MovieCoverComponent,
     BigButtonComponent,
     MediumButtonComponent,
-    SmallButtonComponent
+    SmallButtonComponent,
+    MovieCardComponent
   ],
     imports: [
         BrowserModule,

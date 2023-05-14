@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-medium-button',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./medium-button.component.scss']
 })
 export class MediumButtonComponent {
-
+  @Input() text!: string;
+  @Input() icon!: string;
+  @Input() bgColor!: string;
 }
