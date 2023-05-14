@@ -9,6 +9,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { MovieComponent } from './pages/movie/movie.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MovieCoverComponent } from './components/movie-cover/movie-cover.component';
+import { BigButtonComponent } from './components/UI/buttons/big-button/big-button.component';
+import { MediumButtonComponent } from './components/UI/buttons/medium-button/medium-button.component';
+import { SmallButtonComponent } from './components/UI/buttons/small-button/small-button.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { FooterComponent } from './components/footer/footer.component';
     HomeComponent,
     MovieComponent,
     NotFoundComponent,
-    FooterComponent
+    FooterComponent,
+    MovieCoverComponent,
+    BigButtonComponent,
+    MediumButtonComponent,
+    SmallButtonComponent
   ],
     imports: [
         BrowserModule,
