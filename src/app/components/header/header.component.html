@@ -7,13 +7,13 @@
         </a>
         <a routerLink="/">
           <div class="active-link-div">
-            <p class="active-link">{{'home' | uppercase}}</p>
+            <p class="active-link">{{links[0] | uppercase}}</p>
             <div class="center center-y">
               <div class="blue-circle"></div>
             </div>
           </div>
         </a>
-        <a routerLink="/" *ngFor="let link of links"
+        <a routerLink="/" *ngFor="let link of links | slice:1"
           class="link"
         >{{link | uppercase}}</a>
       </div>
@@ -22,11 +22,8 @@
           <input class="input-field" placeholder="{{'search' | uppercase}}"/>
           <img class="cursor-pointer" src="assets/icons/header/search%201.png" alt="search"/>
         </div>
-        <a routerLink="/">
-          <img src="assets/icons/header/gift%201.png" alt="gift"/>
-        </a>
-        <a routerLink="/">
-          <img src="assets/icons/header/bell%201.png" alt="bell"/>
+        <a routerLink="/" *ngFor="let iconLink of iconLinks">
+          <img src="{{'assets/icons/header/' + iconLink}}" alt="{{iconLink}}"/>
         </a>
         <a routerLink="/">
           <div class="profile">

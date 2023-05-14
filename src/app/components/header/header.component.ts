@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  links = ['tv show', 'movies', 'new'];
+  links = ['home', 'tv show', 'movies', 'new'];
+  iconLinks = ['gift%201.png', 'bell%201.png'];
 }
