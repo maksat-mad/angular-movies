@@ -15,7 +15,7 @@ import {MediumButtonComponent} from './components/UI/buttons/medium-button/mediu
 import {SmallButtonComponent} from './components/UI/buttons/small-button/small-button.component';
 import {MovieCardComponent} from './components/UI/cards/movie-card/movie-card.component';
 import {HttpClientModule} from "@angular/common/http";
-import { MovieListComponent } from './components/movie-list/movie-list.component';
+import {MovieListComponent} from './components/movie-list/movie-list.component';
 
 @NgModule({
   declarations: [

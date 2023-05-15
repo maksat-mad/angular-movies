@@ -1,5 +1,5 @@
 <div class="movie-image"
-     [ngStyle]="{'background-image': 'url(' + 'assets/icons/movie-cover/Movie%20Wallpaper.png' + ')'}">
+     [ngStyle]="{'background-image': 'url(' + 'https://image.tmdb.org/t/p/original' + (movieService.movie | async).backdrop_path + ')'}">
   <app-header></app-header>
   <app-home></app-home>
 </div>

@@ -1,4 +1,4 @@
-<div class="movie-cover center">
+<div class="movie-cover center" *ngIf="movieService.movie | async; let movie">
   <div class="movie-cover-container">
     <div class="menu">
       <a routerLink="/" *ngFor="let menuIcon of menuIcons">
@@ -8,12 +8,17 @@
         />
       </a>
     </div>
-    <h1 class="movie-title">TAMASHA</h1>
-    <p class="movie-text">Ved and Tara fall in love while on a holiday in Corsica and decide to keep their real
-      identities undisclosed. Tara returns to Delhi and meets a new Ved, who is trying to discover his true self.</p>
+    <h1 class="movie-title">{{movie.title}}</h1>
+    <p class="movie-text">{{movie.overview}}</p>
     <div>
-      <p class="movie-genre red">GENRES</p>
-      <p class="movie-genre">Romance, Drama</p>
+      <div class="movie-genres">
+        <p class="movie-genre red">GENRES</p>
+      </div>
+      <div class="movie-genres">
+        <p *ngFor="let genre of movie.genres"
+           class="movie-genre"
+        >{{genre.name}}</p>
+      </div>
     </div>
     <div class="buttons">
       <app-big-button
@@ -25,10 +30,10 @@
     </div>
     <div class="movie-details">
       <img src="assets/icons/movie-cover/image.png" alt="IMDb"/>
-      <p class="movie-rating">7.3</p>
+      <p class="movie-rating">{{movie.vote_average | number:'1.1-1'}}</p>
       <p class="movie-property">U/A</p>
       <p class="movie-property">4K</p>
-      <p class="movie-year">2015</p>
+      <p class="movie-year">{{movie.release_date | date: 'yyyy'}}</p>
     </div>
   </div>
 </div>

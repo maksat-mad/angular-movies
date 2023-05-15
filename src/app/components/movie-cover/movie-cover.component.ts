@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
+import {MovieService} from "../../services/movie.service";
 
 interface BigButtonInfo {
   text: string,
@@ -12,6 +13,7 @@ interface BigButtonInfo {
   styleUrls: ['./movie-cover.component.scss']
 })
 export class MovieCoverComponent {
+  movieService = inject(MovieService);
   menuIcons = ['users.png', 'list.png', 'download.png', 'settings.png'];
   buttons:BigButtonInfo[] = [
     {

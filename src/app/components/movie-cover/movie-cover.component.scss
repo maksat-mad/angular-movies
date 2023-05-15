@@ -38,8 +38,13 @@
   color: #FFFFFF;
 }
 
-.movie-genre {
+.movie-genres {
   padding-left: 134px;
+  display: flex;
+  gap: 15px;
+}
+
+.movie-genre {
   font-family: 'Montserrat', serif;
   font-style: normal;
   font-weight: 600;
