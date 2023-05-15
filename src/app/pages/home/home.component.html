@@ -11,13 +11,14 @@
             [bgColor]="'#5C5C5C'"
           ></app-medium-button>
         </div>
-        <div class="movie-cards">
-          <app-movie-card></app-movie-card>
-          <app-movie-card></app-movie-card>
-          <app-movie-card></app-movie-card>
-          <app-movie-card></app-movie-card>
-          <app-movie-card></app-movie-card>
-          <app-movie-card></app-movie-card>
+        <ng-container *ngIf="trendingMoviesLoading">
+          Loading...
+        </ng-container>
+        <div class="movie-cards" *ngIf="!trendingMoviesLoading">
+          <app-movie-card
+            *ngFor="let movie of trendingMovies | slice:0:6"
+            [movie]="movie"
+          ></app-movie-card>
         </div>
       </div>
     </div>
