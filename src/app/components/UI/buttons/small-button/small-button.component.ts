@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-small-button',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./small-button.component.scss']
 })
 export class SmallButtonComponent {
-
+  @Input() text!: string;
+  @Input() bgColor!: string;
 }

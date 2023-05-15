@@ -13,4 +13,12 @@ export class MovieService {
   getTrendingMovies(): Observable<any> {
     return this.httpClient.get(`${this.BASE_URL}/trending/movie/week?api_key=${this.API_KEY}`);
   }
+
+  getTopRatedMovies(): Observable<any> {
+    return this.httpClient.get(`${this.BASE_URL}/movie/top_rated?api_key=${this.API_KEY}`);
+  }
+
+  getUpcomingMovies(): Observable<any> {
+    return this.httpClient.get(`${this.BASE_URL}/movie/upcoming?api_key=${this.API_KEY}`);
+  }
 }

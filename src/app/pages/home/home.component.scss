@@ -37,8 +37,21 @@
   gap: 42px;
 }
 
-.trending-movies-page-buttons {
+.movies-page-buttons {
   margin-top: 50px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-around;
+}
+
+.title-languages-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.language-buttons {
+  display: flex;
+  gap: 23px;
+  margin-top: 19px;
+  margin-bottom: 22px;
 }
