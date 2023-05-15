@@ -98,4 +98,8 @@ export class MovieService {
     return this.httpClient.get(`${this.BASE_URL}/search/movie?api_key=${this.API_KEY}&query=${this.query.value}`)
       .pipe(tap(() => this.queryResultsLoading = false));
   }
+
+  getMovieById(id: number): Observable<any> {
+    return this.httpClient.get(`${this.BASE_URL}/movie/${id}?api_key=${this.API_KEY}`);
+  }
 }
