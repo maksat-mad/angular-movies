@@ -19,7 +19,12 @@
       </div>
       <div class="search-links-group center-y">
         <div class="search center center-y">
-          <input class="input-field" placeholder="{{'search' | uppercase}}"/>
+          <input
+            class="input-field"
+            placeholder="{{'search' | uppercase}}"
+            [ngModel]="userInput"
+            (ngModelChange)="inputChange($event)"
+          />
           <img class="cursor-pointer" src="assets/icons/header/search%201.png" alt="search"/>
         </div>
         <a routerLink="/" *ngFor="let iconLink of iconLinks">

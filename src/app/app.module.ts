@@ -16,6 +16,7 @@ import {SmallButtonComponent} from './components/UI/buttons/small-button/small-b
 import {MovieCardComponent} from './components/UI/cards/movie-card/movie-card.component';
 import {HttpClientModule} from "@angular/common/http";
 import {MovieListComponent} from './components/movie-list/movie-list.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {MovieListComponent} from './components/movie-list/movie-list.component';
     BrowserModule,
     AppRoutingModule,
     NgOptimizedImage,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

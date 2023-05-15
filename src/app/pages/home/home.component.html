@@ -1,7 +1,7 @@
 <app-movie-cover></app-movie-cover>
 <div class="center">
   <div class="container">
-    <div class="movies">
+    <div class="movies" *ngIf="movieService.query.value === ''">
       <ng-container>
         <div class="title-button-group">
           <h3 class="title">MOVIES YOU MUST WATCH</h3>
@@ -40,6 +40,16 @@
           [movies]="upcomingMovies"
           [pageLimit]="pageLimit"
           [moviesLoading]="upcomingMoviesLoading"
+        ></app-movie-list>
+      </ng-container>
+    </div>
+    <div class="movies" *ngIf="movieService.query.value !== ''">
+      <ng-container>
+        <h3 class="title">SEARCH RESULTS</h3>
+        <app-movie-list
+          [movies]="movieService.queryResults.value"
+          [pageLimit]="pageLimit"
+          [moviesLoading]="movieService.queryResultsLoading"
         ></app-movie-list>
       </ng-container>
     </div>

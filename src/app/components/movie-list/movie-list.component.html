@@ -1,9 +1,9 @@
-<ng-container class="center" *ngIf="moviesLoading">
-  Loading...
-</ng-container>
-<ng-container class="center" *ngIf="!moviesLoading && movies.length === 0">
-  No such movies
-</ng-container>
+<div class="center" *ngIf="moviesLoading">
+  <p class="info">Loading...</p>
+</div>
+<div class="center" *ngIf="!moviesLoading && movies.length === 0">
+  <p class="info">No such movies</p>
+</div>
 <div class="movie-cards" *ngIf="!moviesLoading">
   <app-movie-card
     *ngFor="let movie of movies | slice:0:moviesPage"

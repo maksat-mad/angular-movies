@@ -1,6 +1,7 @@
 import {inject, Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {BehaviorSubject, Observable} from "rxjs";
+import {BehaviorSubject, Observable, tap} from "rxjs";
+import {Movie} from "../models/Movie";
 
 @Injectable({
   providedIn: 'root'
@@ -75,6 +76,11 @@ export class MovieService {
     "vote_average": 7.267,
     "vote_count": 17083
   });
+  query = new BehaviorSubject<string>('');
+
+  queryResults = new BehaviorSubject<Movie[]>([]);
+
+  queryResultsLoading = true;
 
   getTrendingMovies(): Observable<any> {
     return this.httpClient.get(`${this.BASE_URL}/trending/movie/week?api_key=${this.API_KEY}`);
@@ -86,5 +92,10 @@ export class MovieService {
 
   getUpcomingMovies(): Observable<any> {
     return this.httpClient.get(`${this.BASE_URL}/movie/upcoming?api_key=${this.API_KEY}`);
+  }
+
+  getMoviesByQuery(): Observable<any> {
+    return this.httpClient.get(`${this.BASE_URL}/search/movie?api_key=${this.API_KEY}&query=${this.query.value}`)
+      .pipe(tap(() => this.queryResultsLoading = false));
   }
 }
