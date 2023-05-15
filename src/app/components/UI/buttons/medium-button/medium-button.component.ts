@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-medium-button',
@@ -9,4 +9,15 @@ export class MediumButtonComponent {
   @Input() text!: string;
   @Input() icon!: string;
   @Input() bgColor!: string;
+  @Output() show = new EventEmitter();
+
+  handleButtonClick() {
+    switch (this.text) {
+      case 'Show More':
+        this.show.emit(true);
+        break;
+      case 'Show Less':
+        this.show.emit(false);
+    }
+  }
 }

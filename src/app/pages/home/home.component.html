@@ -16,9 +16,25 @@
         </ng-container>
         <div class="movie-cards" *ngIf="!trendingMoviesLoading">
           <app-movie-card
-            *ngFor="let movie of trendingMovies | slice:0:6"
+            *ngFor="let movie of trendingMovies | slice:0:trendingMoviesPage"
             [movie]="movie"
           ></app-movie-card>
+        </div>
+        <div class="trending-movies-page-buttons">
+          <app-medium-button
+            *ngIf="trendingMoviesPage < trendingMovies.length"
+            [text]="'Show More'"
+            [icon]="'down-vector.png'"
+            [bgColor]="'#5E47A1'"
+            (show)="trendingMoviesPageHandle($event)"
+          ></app-medium-button>
+          <app-medium-button
+            *ngIf="trendingMoviesPage >= 12"
+            [text]="'Show Less'"
+            [icon]="'up-vector.png'"
+            [bgColor]="'crimson'"
+            (show)="trendingMoviesPageHandle($event)"
+          ></app-medium-button>
         </div>
       </div>
     </div>

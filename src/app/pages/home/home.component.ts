@@ -10,9 +10,12 @@ import {Subscription} from "rxjs";
 })
 export class HomeComponent implements OnInit, OnDestroy {
   movieService = inject(MovieService);
+  subscriptions = new Subscription();
+  pageLimit = 6;
+
   trendingMovies: Movie[] = [];
   trendingMoviesLoading = true;
-  subscriptions = new Subscription();
+  trendingMoviesPage = 6;
 
   ngOnInit(): void {
     this.trendingMoviesLoading = true;
@@ -24,5 +27,13 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
+  }
+
+  trendingMoviesPageHandle(show: boolean) {
+    if (show) {
+      this.trendingMoviesPage += this.pageLimit;
+      return;
+    }
+    this.trendingMoviesPage -= this.pageLimit;
   }
 }

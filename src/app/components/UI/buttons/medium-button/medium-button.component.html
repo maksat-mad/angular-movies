@@ -1,4 +1,4 @@
-<button [ngStyle]="{'background-color': bgColor}">
+<button (click)="handleButtonClick()" [ngStyle]="{'background-color': bgColor}">
   <p>{{text | uppercase}}</p>
   <img src="{{'assets/icons/movie-cover/buttons/' + icon}}" alt="{{icon}}"/>
 </button>
