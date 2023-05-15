@@ -15,15 +15,12 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   trendingMovies: Movie[] = [];
   trendingMoviesLoading = true;
-  trendingMoviesPage = 6;
 
   topRatedMovies: Movie[] = [];
   topRatedMoviesLoading = true;
-  topRatedMoviesPage = 6;
 
   upcomingMovies: Movie[] = [];
   upcomingMoviesLoading = true;
-  upcomingMoviesPage = 6;
 
   languageButtonsInfo = [
     ['Hindi', '#E43109'],
@@ -51,29 +48,5 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
-  }
-
-  trendingMoviesPageHandle(show: boolean) {
-    if (show) {
-      this.trendingMoviesPage += this.pageLimit;
-      return;
-    }
-    this.trendingMoviesPage -= this.pageLimit;
-  }
-
-  topRatedMoviesPageHandle(show: boolean) {
-    if (show) {
-      this.topRatedMoviesPage += this.pageLimit;
-      return;
-    }
-    this.topRatedMoviesPage -= this.pageLimit;
-  }
-
-  upcomingMoviesPageHandle(show: boolean) {
-    if (show) {
-      this.upcomingMoviesPage += this.pageLimit;
-      return;
-    }
-    this.upcomingMoviesPage -= this.pageLimit;
   }
 }

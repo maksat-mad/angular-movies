@@ -11,34 +11,11 @@
             [bgColor]="'#5C5C5C'"
           ></app-medium-button>
         </div>
-        <ng-container class="center" *ngIf="trendingMoviesLoading">
-          Loading...
-        </ng-container>
-        <ng-container class="center" *ngIf="!trendingMoviesLoading && trendingMovies.length === 0">
-          No such movies
-        </ng-container>
-        <div class="movie-cards" *ngIf="!trendingMoviesLoading">
-          <app-movie-card
-            *ngFor="let movie of trendingMovies | slice:0:trendingMoviesPage"
-            [movie]="movie"
-          ></app-movie-card>
-        </div>
-        <div class="movies-page-buttons">
-          <app-medium-button
-            *ngIf="trendingMoviesPage < trendingMovies.length && trendingMovies.length > 0"
-            [text]="'Show More'"
-            [icon]="'down-vector.png'"
-            [bgColor]="'#5E47A1'"
-            (show)="trendingMoviesPageHandle($event)"
-          ></app-medium-button>
-          <app-medium-button
-            *ngIf="trendingMoviesPage >= 12 && trendingMovies.length > 0"
-            [text]="'Show Less'"
-            [icon]="'up-vector.png'"
-            [bgColor]="'#E43109'"
-            (show)="trendingMoviesPageHandle($event)"
-          ></app-medium-button>
-        </div>
+        <app-movie-list
+          [movies]="trendingMovies"
+          [pageLimit]="pageLimit"
+          [moviesLoading]="trendingMoviesLoading"
+        ></app-movie-list>
       </ng-container>
       <ng-container>
         <div class="title-languages-group">
@@ -51,65 +28,19 @@
             ></app-small-button>
           </div>
         </div>
-        <ng-container class="center" *ngIf="topRatedMoviesLoading">
-          Loading...
-        </ng-container>
-        <ng-container class="center" *ngIf="!topRatedMoviesLoading && topRatedMovies.length === 0">
-          No such movies
-        </ng-container>
-        <div class="movie-cards" *ngIf="!topRatedMoviesLoading">
-          <app-movie-card
-            *ngFor="let movie of topRatedMovies | slice:0:topRatedMoviesPage"
-            [movie]="movie"
-          ></app-movie-card>
-        </div>
-        <div class="movies-page-buttons">
-          <app-medium-button
-            *ngIf="topRatedMoviesPage < topRatedMovies.length && topRatedMovies.length > 0"
-            [text]="'Show More'"
-            [icon]="'down-vector.png'"
-            [bgColor]="'#5E47A1'"
-            (show)="topRatedMoviesPageHandle($event)"
-          ></app-medium-button>
-          <app-medium-button
-            *ngIf="topRatedMoviesPage >= 12 && topRatedMovies.length > 0"
-            [text]="'Show Less'"
-            [icon]="'up-vector.png'"
-            [bgColor]="'#E43109'"
-            (show)="topRatedMoviesPageHandle($event)"
-          ></app-medium-button>
-        </div>
+        <app-movie-list
+          [movies]="topRatedMovies"
+          [pageLimit]="pageLimit"
+          [moviesLoading]="topRatedMoviesLoading"
+        ></app-movie-list>
       </ng-container>
       <ng-container>
         <h3 class="title">UPCOMING MOVIES</h3>
-        <ng-container class="center" *ngIf="upcomingMoviesLoading">
-          Loading...
-        </ng-container>
-        <ng-container class="center" *ngIf="!upcomingMoviesLoading && upcomingMovies.length === 0">
-          No such movies
-        </ng-container>
-        <div class="movie-cards" *ngIf="!upcomingMoviesLoading">
-          <app-movie-card
-            *ngFor="let movie of upcomingMovies | slice:0:upcomingMoviesPage"
-            [movie]="movie"
-          ></app-movie-card>
-        </div>
-        <div class="movies-page-buttons">
-          <app-medium-button
-            *ngIf="upcomingMoviesPage < upcomingMovies.length && upcomingMovies.length > 0"
-            [text]="'Show More'"
-            [icon]="'down-vector.png'"
-            [bgColor]="'#5E47A1'"
-            (show)="upcomingMoviesPageHandle($event)"
-          ></app-medium-button>
-          <app-medium-button
-            *ngIf="upcomingMoviesPage >= 12 && upcomingMovies.length > 0"
-            [text]="'Show Less'"
-            [icon]="'up-vector.png'"
-            [bgColor]="'#E43109'"
-            (show)="upcomingMoviesPageHandle($event)"
-          ></app-medium-button>
-        </div>
+        <app-movie-list
+          [movies]="upcomingMovies"
+          [pageLimit]="pageLimit"
+          [moviesLoading]="upcomingMoviesLoading"
+        ></app-movie-list>
       </ng-container>
     </div>
   </div>
