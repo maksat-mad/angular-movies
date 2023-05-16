@@ -16,6 +16,7 @@ import {MovieCardComponent} from './components/UI/cards/movie-card/movie-card.co
 import {HttpClientModule} from "@angular/common/http";
 import {MovieListComponent} from './components/movie-list/movie-list.component';
 import {FormsModule} from "@angular/forms";
+import {MovieComponent} from './pages/movie/movie.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {FormsModule} from "@angular/forms";
     MediumButtonComponent,
     SmallButtonComponent,
     MovieCardComponent,
-    MovieListComponent
+    MovieListComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,
