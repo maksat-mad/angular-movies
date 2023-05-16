@@ -2,7 +2,7 @@ import {Component, inject, OnDestroy, OnInit} from '@angular/core';
 import {Subscription, switchMap} from "rxjs";
 import {MovieService} from "../../services/movie.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Actor} from "../../models/MovieModels";
+import {Actor, Movie} from "../../models/MovieModels";
 
 @Component({
   selector: 'app-movie',
@@ -17,6 +17,8 @@ export class MovieComponent implements OnInit, OnDestroy {
   trailerLink = '';
   actors: Actor[] = [];
   actorsLoading = true;
+  similarMovies: Movie[] = [];
+  similarMoviesLoading = true;
 
   ngOnInit(): void {
     this.subscriptions.add(
@@ -34,6 +36,12 @@ export class MovieComponent implements OnInit, OnDestroy {
             this.movieService.getMovieActors(data.id).subscribe(info => this.actors = info.cast)
           );
           this.actorsLoading = false;
+
+          this.similarMoviesLoading = true;
+          this.subscriptions.add(
+            this.movieService.getSimilarMovies(data.id).subscribe(info => this.similarMovies = info.results)
+          );
+          this.similarMoviesLoading = false;
         },
         error => {
           this.router.navigate(['/not-found']);

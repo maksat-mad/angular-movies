@@ -51,4 +51,8 @@ export class MovieService {
   getMovieImages(id: number): Observable<any> {
     return this.httpClient.get(`${this.BASE_URL}/movie/${id}/images?api_key=${this.API_KEY}`);
   }
+
+  getSimilarMovies(id: number): Observable<any> {
+    return this.httpClient.get(`${this.BASE_URL}/movie/${id}/similar?api_key=${this.API_KEY}`);
+  }
 }

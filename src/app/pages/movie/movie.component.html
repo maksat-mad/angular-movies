@@ -20,6 +20,14 @@
           [actorsLoading]="actorsLoading"
         ></app-actor-list>
       </div>
+      <ng-container>
+        <h3 class="title">MORE LIKE THIS</h3>
+        <app-movie-list
+          [movies]="similarMovies"
+          [pageLimit]="6"
+          [moviesLoading]="similarMoviesLoading"
+        ></app-movie-list>
+      </ng-container>
     </div>
     <div class="movie-bg" *ngIf="movieService.query.value !== ''">
       <ng-container>
