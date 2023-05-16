@@ -7,7 +7,23 @@ import {Actor, Movie} from "../../models/MovieModels";
 @Component({
   selector: 'app-movie',
   templateUrl: './movie.component.html',
-  styleUrls: ['./movie.component.scss']
+  styles: [`
+    .trailer-actors {
+      display: flex;
+      justify-content: space-between;
+      gap: 100px;
+    }
+
+    .trailer-text {
+      margin-bottom: 10px;
+      font-family: 'Montserrat', serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      color: #FFFFFF;
+    }
+  `]
 })
 export class MovieComponent implements OnInit, OnDestroy {
   subscriptions = new Subscription();

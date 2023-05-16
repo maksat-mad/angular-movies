@@ -16,6 +16,7 @@ export class MovieService {
   query = new BehaviorSubject<string>('');
 
   queryResults = new BehaviorSubject<Movie[]>([]);
+  favoriteMovies = new BehaviorSubject<Movie[]>([]);
 
   queryResultsLoading = true;
 

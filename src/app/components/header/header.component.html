@@ -20,8 +20,13 @@
         </ng-container>
       </div>
       <div class="search-links-group center-y">
-        <div class="search center center-y">
+        <div
+          class="search center center-y"
+          [ngStyle]="{'background-color': router.url !== '/' && !router.url.startsWith('/movie') ? 'crimson' : ''}"
+        >
           <input
+            [disabled]="router.url !== '/' && !router.url.startsWith('/movie')"
+            [ngStyle]="{'background-color': router.url !== '/' && !router.url.startsWith('/movie') ? 'crimson' : ''}"
             class="input-field"
             placeholder="{{'search' | uppercase}}"
             [ngModel]="userInput"

@@ -20,6 +20,7 @@ import {MovieComponent} from './pages/movie/movie.component';
 import {SafePipe} from './pipes/safe.pipe';
 import {ActorCardComponent} from './components/UI/cards/actor-card/actor-card.component';
 import {ActorListComponent} from './components/actor-list/actor-list.component';
+import {FavoriteMoviesComponent} from './pages/favorite-movies/favorite-movies.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {ActorListComponent} from './components/actor-list/actor-list.component';
     MovieComponent,
     SafePipe,
     ActorCardComponent,
-    ActorListComponent
+    ActorListComponent,
+    FavoriteMoviesComponent
   ],
   imports: [
     BrowserModule,

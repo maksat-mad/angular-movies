@@ -6,7 +6,26 @@ import {Subscription} from "rxjs";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styles: [`
+    .title-button-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 800px;
+    }
+
+    .title-languages-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .language-buttons {
+      display: flex;
+      gap: 23px;
+      margin-top: 19px;
+      margin-bottom: 22px;
+    }
+  `]
 })
 export class HomeComponent implements OnInit, OnDestroy {
   movieService = inject(MovieService);
