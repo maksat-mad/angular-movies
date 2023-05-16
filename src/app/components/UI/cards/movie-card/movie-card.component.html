@@ -13,7 +13,20 @@
     </div>
     <div class="card-bottom-2 center-y">
       <img src="assets/icons/card/eye.png" alt="eye"/>
-      <img class="cursor-pointer" src="assets/icons/card/white-heart.png" alt="white heart"/>
+      <img
+        *ngIf="!redHeart"
+        class="cursor-pointer"
+        src="assets/icons/card/white-heart.png"
+        alt="white heart"
+        (click)="addFavorite()"
+      />
+      <img
+        *ngIf="redHeart"
+        class="cursor-pointer"
+        src="assets/icons/card/red-heart.png"
+        alt="red heart"
+        (click)="removeFavorite()"
+      />
     </div>
   </div>
 </div>
