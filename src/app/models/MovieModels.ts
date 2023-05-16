@@ -30,3 +30,9 @@ export interface Actor {
   "credit_id": string,
   "order": number
 }
+
+export interface HeaderLink {
+  name: string,
+  path: string,
+  regex: RegExp
+}

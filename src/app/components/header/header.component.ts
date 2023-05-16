@@ -1,6 +1,8 @@
 import {Component, inject, OnDestroy} from '@angular/core';
 import {MovieService} from "../../services/movie.service";
 import {Subscription} from "rxjs";
+import {Router} from "@angular/router";
+import {HeaderLink} from "../../models/MovieModels";
 
 @Component({
   selector: 'app-header',
@@ -9,8 +11,25 @@ import {Subscription} from "rxjs";
 })
 export class HeaderComponent implements OnDestroy {
   movieService = inject(MovieService);
+  router = inject(Router);
   subscriptions = new Subscription();
-  links = ['home', 'tv show', 'movies', 'new'];
+  links:HeaderLink[] = [
+    {
+      name: 'home',
+      path: '/',
+      regex: /^\/$/
+    },
+    {
+      name: 'movies',
+      path: '/not-found',
+      regex: /^\/movie/
+    },
+    {
+      name: 'favorites',
+      path: '/favorites',
+      regex: /^\/favorites/
+    }
+  ];
   iconLinks = ['gift%201.png', 'bell%201.png'];
   userInput = '';
 
