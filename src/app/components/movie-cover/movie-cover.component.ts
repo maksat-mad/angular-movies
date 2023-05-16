@@ -40,7 +40,11 @@ export class MovieCoverComponent implements OnInit, OnDestroy {
       ).subscribe(data => {
           this.subscriptions.add(
             this.movieService.getMovieImages(data.id).subscribe(info => {
-              this.logoLink = info.logos[0].file_path;
+              try {
+                this.logoLink = info.logos[0].file_path;
+              } catch (error) {
+                this.logoLink = '';
+              }
             })
           )
         },

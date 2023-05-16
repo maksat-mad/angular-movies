@@ -8,7 +8,8 @@
         />
       </a>
     </div>
-    <img class="movie-title" src="{{'http://image.tmdb.org/t/p/w300' + logoLink}}" alt="{{movie.title}}"/>
+    <h2 *ngIf="logoLink === ''" class="movie-title">{{movie.title}}</h2>
+    <img *ngIf="logoLink !== ''" class="movie-title" src="{{'http://image.tmdb.org/t/p/w300' + logoLink}}" alt="{{movie.title}}"/>
     <p class="movie-text">{{movie.overview}}</p>
     <div>
       <div class="movie-genres">
