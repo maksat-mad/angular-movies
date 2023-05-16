@@ -25,3 +25,19 @@
 .text-decoration-none {
   text-decoration: none;
 }
+
+.info {
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+}
+
+.show-buttons {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+}

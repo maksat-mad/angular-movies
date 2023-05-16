@@ -15,9 +15,9 @@
         <p class="movie-genre red">GENRES</p>
       </div>
       <div class="movie-genres">
-        <p *ngFor="let genre of movie.genres"
+        <p *ngFor="let genre of movie.genres; let i = index"
            class="movie-genre"
-        >{{genre.name}}</p>
+        >{{genre.name}}{{i !== movie.genres.length - 1 ? ',' : ''}}</p>
       </div>
     </div>
     <div class="buttons">

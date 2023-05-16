@@ -8,6 +8,12 @@
   border-radius: 24px;
 }
 
+.trailer-actors {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+
 .trailer-text {
   margin-bottom: 10px;
   font-family: 'Montserrat', serif;

@@ -18,6 +18,8 @@ import {MovieListComponent} from './components/movie-list/movie-list.component';
 import {FormsModule} from "@angular/forms";
 import {MovieComponent} from './pages/movie/movie.component';
 import {SafePipe} from './pipes/safe.pipe';
+import {ActorCardComponent} from './components/UI/cards/actor-card/actor-card.component';
+import {ActorListComponent} from './components/actor-list/actor-list.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import {SafePipe} from './pipes/safe.pipe';
     MovieCardComponent,
     MovieListComponent,
     MovieComponent,
-    SafePipe
+    SafePipe,
+    ActorCardComponent,
+    ActorListComponent
   ],
   imports: [
     BrowserModule,

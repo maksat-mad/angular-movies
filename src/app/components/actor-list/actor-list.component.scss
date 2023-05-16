@@ -1,0 +1,15 @@
+.actor-list-text {
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #FFFFFF;
+}
+
+.actor-cards {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 72px;
+}

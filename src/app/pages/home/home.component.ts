@@ -1,6 +1,6 @@
 import {Component, inject, OnDestroy, OnInit} from '@angular/core';
 import {MovieService} from "../../services/movie.service";
-import {Movie} from "../../models/Movie";
+import {Movie} from "../../models/MovieModels";
 import {Subscription} from "rxjs";
 
 @Component({
