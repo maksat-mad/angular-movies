@@ -1,5 +1,7 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, OnDestroy, OnInit} from '@angular/core';
 import {MovieService} from "../../services/movie.service";
+import {Subscription, switchMap} from "rxjs";
+import {ActivatedRoute} from "@angular/router";
 
 interface BigButtonInfo {
   text: string,
@@ -12,10 +14,13 @@ interface BigButtonInfo {
   templateUrl: './movie-cover.component.html',
   styleUrls: ['./movie-cover.component.scss']
 })
-export class MovieCoverComponent {
+export class MovieCoverComponent implements OnInit, OnDestroy {
   movieService = inject(MovieService);
+  activatedRoute = inject(ActivatedRoute);
+  subscriptions = new Subscription();
   menuIcons = ['users.png', 'list.png', 'download.png', 'settings.png'];
-  buttons:BigButtonInfo[] = [
+  logoLink = '';
+  buttons: BigButtonInfo[] = [
     {
       text: 'watch',
       icon: 'Vector.png',
@@ -27,4 +32,29 @@ export class MovieCoverComponent {
       bgColor: '#5C5C5C'
     }
   ];
+
+  ngOnInit(): void {
+    this.subscriptions.add(
+      this.activatedRoute.paramMap.pipe(
+        switchMap(paramMap => this.movieService.getMovieById(+paramMap.get('id')!))
+      ).subscribe(data => {
+          this.subscriptions.add(
+            this.movieService.getMovieImages(data.id).subscribe(info => {
+              this.logoLink = info.logos[0].file_path;
+            })
+          )
+        },
+        error => {
+          this.subscriptions.add(
+            this.movieService.getMovieImages(this.movieService.movie.value.id).subscribe(info => {
+              this.logoLink = info.logos[0].file_path;
+            })
+          )
+        })
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
+  }
 }

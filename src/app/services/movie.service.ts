@@ -47,4 +47,8 @@ export class MovieService {
   getMovieActors(id: number): Observable<any> {
     return this.httpClient.get(`${this.BASE_URL}/movie/${id}/credits?api_key=${this.API_KEY}`);
   }
+
+  getMovieImages(id: number): Observable<any> {
+    return this.httpClient.get(`${this.BASE_URL}/movie/${id}/images?api_key=${this.API_KEY}`);
+  }
 }

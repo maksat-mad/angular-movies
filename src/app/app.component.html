@@ -1,5 +1,5 @@
 <div class="movie-image"
-     [ngStyle]="{'background-image': 'url(' + 'https://image.tmdb.org/t/p/original' + (movieService.movie | async).backdrop_path + ')'}">
+     [ngStyle]="{'background-image': 'url(' + 'https://image.tmdb.org/t/p/w1280' + (movieService.movie | async).backdrop_path + ')'}">
   <div class="background-gradient">
     <app-header></app-header>
     <router-outlet></router-outlet>

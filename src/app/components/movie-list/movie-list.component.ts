@@ -4,7 +4,14 @@ import {Movie} from "../../models/MovieModels";
 @Component({
   selector: 'app-movie-list',
   templateUrl: './movie-list.component.html',
-  styleUrls: ['./movie-list.component.scss']
+  styles: [`
+    .movie-cards {
+      margin-top: 21px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 42px;
+    }
+  `]
 })
 export class MovieListComponent {
   @Input() movies!: Movie[];
