@@ -17,6 +17,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {MovieListComponent} from './components/movie-list/movie-list.component';
 import {FormsModule} from "@angular/forms";
 import {MovieComponent} from './pages/movie/movie.component';
+import {SafePipe} from './pipes/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {MovieComponent} from './pages/movie/movie.component';
     SmallButtonComponent,
     MovieCardComponent,
     MovieListComponent,
-    MovieComponent
+    MovieComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

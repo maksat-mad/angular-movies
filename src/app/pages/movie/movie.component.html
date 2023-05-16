@@ -1,1 +1,18 @@
 <app-movie-cover></app-movie-cover>
+<div class="center">
+  <div class="container">
+    <div class="movie-bg">
+      <div class="trailer">
+        <p class="trailer-text">TRAILER</p>
+        <iframe
+          width="307px"
+          height="170px"
+          [src]="'https://www.youtube.com/embed/' + trailerLink | safe"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>

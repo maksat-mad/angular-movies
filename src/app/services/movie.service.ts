@@ -102,4 +102,8 @@ export class MovieService {
   getMovieById(id: number): Observable<any> {
     return this.httpClient.get(`${this.BASE_URL}/movie/${id}?api_key=${this.API_KEY}`);
   }
+
+  getMovieVideos(id: number): Observable<any> {
+    return this.httpClient.get(`${this.BASE_URL}/movie/${id}/videos?api_key=${this.API_KEY}`);
+  }
 }

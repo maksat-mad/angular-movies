@@ -13,6 +13,7 @@ export class MovieComponent implements OnInit, OnDestroy {
   movieService = inject(MovieService);
   router = inject(Router);
   activatedRoute = inject(ActivatedRoute);
+  trailerLink = '';
 
   ngOnInit(): void {
     this.subscriptions.add(
@@ -20,6 +21,9 @@ export class MovieComponent implements OnInit, OnDestroy {
         switchMap(paramMap => this.movieService.getMovieById(+paramMap.get('id')!))
       ).subscribe(data => {
           this.movieService.movie.next(data);
+          this.subscriptions.add(
+            this.movieService.getMovieVideos(data.id).subscribe(info => this.trailerLink = info.results[0].key)
+          );
         },
         error => {
           this.router.navigate(['/not-found']);
